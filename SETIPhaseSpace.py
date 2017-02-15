@@ -8,7 +8,7 @@ seti_dict = \
     'sens' : 1e-22,         # Sensitivity (W/m^2)
     'res'  : 100,           # Spectral resolution (Hz)
     'hours': 200,           # Obseving time (hr)
-    'xytxt': [92000,20,0],  # [x,y] Location of the label on the plot
+    'xytxt': [92000,20,0],  # [x,y,rotation_angle] Location of the label on the plot
     'comment': '2 stars - epsilon eridani and tau ceti'}, # Title of the entry on 
  1:{'ref'  : 'Cohen+1980',
     'tel'  : 'Haystack,Arecibo,Parkes',
