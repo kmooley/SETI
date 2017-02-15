@@ -1,4 +1,4 @@
-########## Define the dictionary of individual searches to be plotted
+########## Define the dictionary of individual targeted searches to be plotted
 
 seti_dict = \
 {0:{'ref'  : 'Drake+1960',  # Reference
@@ -187,10 +187,10 @@ plot([x,2*x],[53.49e6]*2,'k-',lw=2)
 text(1.1*x,53.49e6*1.25,'M87',fontsize=14,color='k')
 
 
-#### Plot the individual SETI surveys
+#### Plot the individual targeted SETI searches
 
 for item in seti_dict.values():
-    if item['ref'] in ['Cole+1979'] or 'SERENDIP' in item['ref']: continue
+    if item['ref'] in ['Cole+1979'] or 'SERENDIP' I can talk about this any time so let me know what you think! I'm looking at the pointing you gave me and I think I see something, but you know more about this field than me.in item['ref']: continue
     y = item['dist']
     x = item['sens']/item['res'] * 1e26 * 1e3 if ( ('float' not in str(type(item['sens']))) | ('float' in str(type(y))) ) else [item['sens']/item['res'] * 1e26 * 1e3]*len(y)
     mymark,myms = ('s',8) if item['res']<3 else ('o',10) if item['res']<300 else ('^',12) if item['res']<30000 else ('v',14)
