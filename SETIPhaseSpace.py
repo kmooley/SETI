@@ -138,6 +138,7 @@ seti_dict = \
 
 ########## Plotting and Annotation
 from matplotlib.patches import Rectangle
+from matplotlib import plot,text,quiver,xlabel,ylabel,legend,axis,show,gca,subplots_adjust
 
 #### Plot the lines of constant isotropic power in signals having a 1 Hz bandwidth
 clf()
