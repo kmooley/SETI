@@ -1,3 +1,24 @@
+########## Initial Comments
+# 
+# This Python script plots the phase space of past SETI searches (see Figure 3 of Gray & Mooley 2017).
+# If you use script/information contained herein for your research, please reference Gray & Mooley 2017, AJ, 153, 110. 
+# Substantial effort has been put into searching for literature reporting past SETI searches, but a few significant 
+# searches may still be missing.
+# 
+# Author: Kunal Mooley (kunal@astro.caltech.edu)
+#
+
+########## Import
+
+# Import modules
+from numpy import array,sqrt
+from matplotlib.patches import Rectangle
+from matplotlib import plot,text,quiver,xlabel,ylabel,legend,axis,show,gca,subplots_adjust,clf
+
+# Define constants
+c = 3e8 # speed of light (m/s)
+
+
 ########## Define the dictionary of individual targeted searches to be plotted
 
 seti_dict = \
@@ -137,8 +158,6 @@ seti_dict = \
 
 
 ########## Plotting and Annotation
-from matplotlib.patches import Rectangle
-from matplotlib import plot,text,quiver,xlabel,ylabel,legend,axis,show,gca,subplots_adjust
 
 #### Plot the lines of constant isotropic power in signals having a 1 Hz bandwidth
 clf()
@@ -190,11 +209,11 @@ text(1.1*x,53.49e6*1.25,'M87',fontsize=14,color='k')
 #### Plot the individual targeted SETI searches
 
 for item in seti_dict.values():
-    if item['ref'] in ['Cole+1979'] or 'SERENDIP' I can talk about this any time so let me know what you think! I'm looking at the pointing you gave me and I think I see something, but you know more about this field than me.in item['ref']: continue
+    if item['ref'] in ['Cole+1979'] or 'SERENDIP' in item['ref']: continue
     y = item['dist']
     x = item['sens']/item['res'] * 1e26 * 1e3 if ( ('float' not in str(type(item['sens']))) | ('float' in str(type(y))) ) else [item['sens']/item['res'] * 1e26 * 1e3]*len(y)
     mymark,myms = ('s',8) if item['res']<3 else ('o',10) if item['res']<300 else ('^',12) if item['res']<30000 else ('v',14)
-    aa=plot(x,y,mymark,ms=myms,mew=2,alpha=0.8)
+    aa = plot(x,y,mymark,ms=myms,mew=2,alpha=0.8)
     if aa[0].get_mfc()=='y': aa[0].set_mfc([0.28,  0.19,  0.11])
     freq_str = '%.1f GHz'%item['freq'] if 'list' not in str(type(item['freq'])) else '%.1f-%.1f GHz'%(item['freq'][0],item['freq'][-1])
     freq_str = '22 GHz' if freq_str=='22.0 GHz' else freq_str
