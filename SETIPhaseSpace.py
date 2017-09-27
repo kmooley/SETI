@@ -1,6 +1,6 @@
 ########## Initial Comments
 # 
-# This Python script plots the phase space of past SETI searches (see Figure 3 of Gray & Mooley 2017).
+# This Python script plots the phase space of past SETI searches (see Figure 9 of Gray & Mooley 2017).
 # If you use script/information contained herein for your research, please reference Gray & Mooley 2017, AJ, 153, 110. 
 # Substantial effort has been put into searching for literature reporting past SETI searches, but a few significant 
 # searches may still be missing.
